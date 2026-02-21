@@ -1,0 +1,295 @@
+.mobile-signup {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 1rem;
+}
+
+.mobile-signup__container {
+  background: var(--color-bg-primary, white);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 10px 40px var(--color-shadow-lg, rgba(0, 0, 0, 0.2));
+  margin: 1rem 0;
+  transition: all 0.3s ease;
+}
+
+.mobile-signup__header {
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+
+.mobile-signup__logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.mobile-signup__logo-icon {
+  font-size: 2.5rem;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 50%;
+  color: white;
+}
+
+.mobile-signup__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text-primary, #1a202c);
+  margin: 0 0 0.5rem 0;
+  transition: color 0.3s ease;
+}
+
+.mobile-signup__subtitle {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary, #718096);
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.mobile-signup__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mobile-signup__form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.mobile-signup__label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-primary, #2d3748);
+  transition: color 0.3s ease;
+}
+
+.mobile-signup__input {
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--color-border, #e2e8f0);
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+  outline: none;
+  background: var(--color-bg-primary, white);
+  color: var(--color-text-primary, #1a202c);
+}
+
+.mobile-signup__input:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.mobile-signup__input--error {
+  border-color: #f56565;
+}
+
+.mobile-signup__input--error:focus {
+  box-shadow: 0 0 0 3px rgba(245, 101, 101, 0.1);
+}
+
+.mobile-signup__error {
+  font-size: 0.75rem;
+  color: #f56565;
+  margin-top: -0.2rem;
+}
+
+.mobile-signup__terms {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-top: 0.25rem;
+}
+
+.mobile-signup__checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  cursor: pointer;
+  color: var(--color-text-secondary, #4a5568);
+  font-size: 0.875rem;
+  line-height: 1.4;
+  transition: color 0.3s ease;
+}
+
+.mobile-signup__checkbox input[type="checkbox"] {
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+  margin-top: 0.15rem;
+  flex-shrink: 0;
+}
+
+.mobile-signup__link {
+  background: none;
+  border: none;
+  color: #667eea;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  font-size: inherit;
+}
+
+.mobile-signup__link:hover {
+  text-decoration: underline;
+}
+
+.mobile-signup__submit {
+  width: 100%;
+  padding: 0.875rem;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+.mobile-signup__divider {
+  display: flex;
+  align-items: center;
+  margin: 1.25rem 0;
+  color: var(--color-text-tertiary, #a0aec0);
+  font-size: 0.875rem;
+  transition: color 0.3s ease;
+}
+
+.mobile-signup__divider::before,
+.mobile-signup__divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--color-border, #e2e8f0);
+  transition: background 0.3s ease;
+}
+
+.mobile-signup__divider span {
+  padding: 0 1rem;
+}
+
+.mobile-signup__social {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.mobile-signup__social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border: 2px solid var(--color-border, #e2e8f0);
+  border-radius: 0.5rem;
+  background: var(--color-bg-primary, white);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: var(--color-text-primary, #1a202c);
+}
+
+.mobile-signup__social-btn:hover {
+  background: var(--color-bg-secondary, #f7fafc);
+  border-color: var(--color-border-hover, #cbd5e0);
+}
+
+.mobile-signup__social-btn--google {
+  color: var(--color-text-primary, #1a202c);
+  transition: color 0.3s ease;
+}
+
+.mobile-signup__social-icon {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #667eea;
+}
+
+.mobile-signup__footer {
+  text-align: center;
+  margin-top: 1.25rem;
+  font-size: 0.95rem;
+  color: var(--color-text-secondary, #4a5568);
+  transition: color 0.3s ease;
+}
+
+.mobile-signup__login-link {
+  color: #667eea;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.mobile-signup__login-link:hover {
+  text-decoration: underline;
+}
+
+.mobile-signup__back {
+  text-align: center;
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--color-border, #e2e8f0);
+  transition: border-color 0.3s ease;
+}
+
+.mobile-signup__back-link {
+  color: var(--color-text-secondary, #718096);
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: color 0.3s ease;
+}
+
+.mobile-signup__back-link:hover {
+  color: var(--color-text-primary, #4a5568);
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .mobile-signup {
+    padding: 1rem 0.75rem;
+  }
+
+  .mobile-signup__container {
+    padding: 1.5rem;
+  }
+
+  .mobile-signup__title {
+    font-size: 1.35rem;
+  }
+
+  .mobile-signup__logo-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+  }
+
+  .mobile-signup__form {
+    gap: 0.875rem;
+  }
+}
+
+@media (max-height: 700px) {
+  .mobile-signup {
+    padding: 0.75rem;
+  }
+
+  .mobile-signup__container {
+    margin: 0.5rem 0;
+  }
+
+  .mobile-signup__header {
+    margin-bottom: 1.25rem;
+  }
+
+  .mobile-signup__logo {
+    margin-bottom: 0.75rem;
+  }
+}

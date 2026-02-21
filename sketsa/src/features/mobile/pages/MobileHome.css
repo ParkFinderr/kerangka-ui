@@ -3,28 +3,32 @@
 }
 
 .mobile-home__user-selector {
-  background: white;
+  background: var(--color-bg-primary, white);
   padding: 1rem;
   border-radius: 0.5rem;
   margin-bottom: 1.5rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px var(--color-shadow, rgba(0, 0, 0, 0.1));
+  transition: all 0.3s ease;
 }
 
 .mobile-home__label {
   display: block;
   margin-bottom: 0.5rem;
   font-weight: 600;
-  color: #374151;
+  color: var(--color-text-primary, #374151);
+  transition: color 0.3s ease;
 }
 
 .mobile-home__select {
   width: 100%;
   padding: 0.75rem;
-  border: 2px solid #e5e7eb;
+  border: 2px solid var(--color-border, #e5e7eb);
   border-radius: 0.5rem;
   font-size: 1rem;
-  background: white;
+  background: var(--color-bg-primary, white);
+  color: var(--color-text-primary, #1f2937);
   cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 .mobile-home__select:focus {
@@ -40,7 +44,8 @@
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color: #1f2937;
+  color: var(--color-text-primary, #1f2937);
+  transition: color 0.3s ease;
 }
 
 .mobile-home__bookings {
@@ -51,24 +56,27 @@
 }
 
 .mobile-home__booking-card {
-  background: white;
+  background: var(--color-bg-primary, white);
   padding: 1rem;
   border-radius: 0.5rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px var(--color-shadow, rgba(0, 0, 0, 0.1));
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-left: 4px solid #3b82f6;
+  transition: all 0.3s ease;
 }
 
 .mobile-home__booking-info h3 {
   margin: 0 0 0.25rem 0;
   font-size: 1.125rem;
-  color: #1f2937;
+  color: var(--color-text-primary, #1f2937);
+  transition: color 0.3s ease;
 }
 
 .mobile-home__booking-time {
   margin: 0;
   font-size: 0.875rem;
-  color: #6b7280;
+  color: var(--color-text-secondary, #6b7280);
+  transition: color 0.3s ease;
 }

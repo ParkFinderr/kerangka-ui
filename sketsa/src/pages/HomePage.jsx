@@ -35,7 +35,7 @@ export function HomePage() {
             <Button
               variant="primary"
               fullWidth
-              onClick={() => navigate('/mobile')}
+              onClick={() => navigate('/mobile/login')}
             >
               Buka Mobile View
             </Button>

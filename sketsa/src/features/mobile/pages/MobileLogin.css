@@ -1,0 +1,249 @@
+.mobile-login {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.mobile-login__container {
+  background: var(--color-bg-primary, white);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 10px 40px var(--color-shadow-lg, rgba(0, 0, 0, 0.2));
+  transition: all 0.3s ease;
+}
+
+.mobile-login__header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.mobile-login__logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.mobile-login__logo-icon {
+  font-size: 3rem;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 50%;
+  color: white;
+}
+
+.mobile-login__title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-text-primary, #1a202c);
+  margin: 0 0 0.5rem 0;
+  transition: color 0.3s ease;
+}
+
+.mobile-login__subtitle {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary, #718096);
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.mobile-login__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.mobile-login__form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mobile-login__label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-primary, #2d3748);
+  transition: color 0.3s ease;
+}
+
+.mobile-login__input {
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--color-border, #e2e8f0);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: all 0.2s;
+  outline: none;
+  background: var(--color-bg-primary, white);
+  color: var(--color-text-primary, #1a202c);
+}
+
+.mobile-login__input:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.mobile-login__options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+}
+
+.mobile-login__checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  color: var(--color-text-secondary, #4a5568);
+  transition: color 0.3s ease;
+}
+
+.mobile-login__checkbox input[type="checkbox"] {
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+}
+
+.mobile-login__link {
+  background: none;
+  border: none;
+  color: #667eea;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+}
+
+.mobile-login__link:hover {
+  text-decoration: underline;
+}
+
+.mobile-login__submit {
+  width: 100%;
+  padding: 0.875rem;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+.mobile-login__divider {
+  display: flex;
+  align-items: center;
+  margin: 1.5rem 0;
+  color: var(--color-text-tertiary, #a0aec0);
+  font-size: 0.875rem;
+  transition: color 0.3s ease;
+}
+
+.mobile-login__divider::before,
+.mobile-login__divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--color-border, #e2e8f0);
+  transition: background 0.3s ease;
+}
+
+.mobile-login__divider span {
+  padding: 0 1rem;
+}
+
+.mobile-login__social {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.mobile-login__social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border: 2px solid var(--color-border, #e2e8f0);
+  border-radius: 0.5rem;
+  background: var(--color-bg-primary, white);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: var(--color-text-primary, #1a202c);
+}
+
+.mobile-login__social-btn:hover {
+  background: var(--color-bg-secondary, #f7fafc);
+  border-color: var(--color-border-hover, #cbd5e0);
+}
+
+.mobile-login__social-btn--google {
+  color: var(--color-text-primary, #1a202c);
+  transition: color 0.3s ease;
+}
+
+.mobile-login__social-icon {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #667eea;
+}
+
+.mobile-login__footer {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  color: var(--color-text-secondary, #4a5568);
+  transition: color 0.3s ease;
+}
+
+.mobile-login__signup-link {
+  color: #667eea;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.mobile-login__signup-link:hover {
+  text-decoration: underline;
+}
+
+.mobile-login__back {
+  text-align: center;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border, #e2e8f0);
+  transition: border-color 0.3s ease;
+}
+
+.mobile-login__back-link {
+  color: var(--color-text-secondary, #718096);
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: color 0.3s ease;
+}
+
+.mobile-login__back-link:hover {
+  color: var(--color-text-primary, #4a5568);
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .mobile-login__container {
+    padding: 1.5rem;
+  }
+
+  .mobile-login__title {
+    font-size: 1.5rem;
+  }
+
+  .mobile-login__logo-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 2.5rem;
+  }
+}

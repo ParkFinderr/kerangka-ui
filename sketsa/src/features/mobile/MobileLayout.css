@@ -1,8 +1,9 @@
 .mobile-layout {
   min-height: 100vh;
-  background: #f3f4f6;
+  background: var(--color-bg-tertiary, #f3f4f6);
   display: flex;
   flex-direction: column;
+  transition: background 0.3s ease;
 }
 
 .mobile-header {
@@ -16,6 +17,17 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
+}
+
+.mobile-header__left {
+  flex: 1;
+}
+
+.mobile-header__right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 
 .mobile-header__title {
@@ -30,15 +42,40 @@
   opacity: 0.9;
 }
 
+.mobile-header__profile {
+  color: white;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.mobile-header__profile-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.2s;
+}
+
+.mobile-header__profile:hover .mobile-header__profile-avatar {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: scale(1.05);
+}
+
 .mobile-header__back {
   color: white;
   text-decoration: none;
   font-size: 0.875rem;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.875rem;
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 0.5rem;
   transition: all 0.2s;
   font-weight: 500;
+  white-space: nowrap;
 }
 
 .mobile-header__back:hover {
