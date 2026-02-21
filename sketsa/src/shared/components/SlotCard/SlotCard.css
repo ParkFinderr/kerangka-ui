@@ -1,0 +1,85 @@
+.slot-card {
+  background: white;
+  border: 3px solid;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.slot-card:hover:not(.slot-card--disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.slot-card--disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.slot-card--intrusion {
+  animation: pulse 1s ease-in-out infinite;
+}
+
+.slot-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.slot-card__id {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+  color: #1f2937;
+}
+
+.slot-card__details {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.slot-card__detail {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.25rem;
+  font-size: 0.875rem;
+}
+
+.slot-card__label {
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.slot-card__value {
+  color: #1f2937;
+  font-weight: 600;
+}
+
+.slot-card__indicator {
+  margin-top: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.slot-card__indicator--available {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(239, 68, 68, 0);
+  }
+}

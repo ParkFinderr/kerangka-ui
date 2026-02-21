@@ -1,0 +1,121 @@
+.mobile-session {
+  padding-bottom: 2rem;
+}
+
+.mobile-session__empty {
+  background: white;
+  padding: 3rem 1.5rem;
+  border-radius: 0.75rem;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-session__empty h2 {
+  margin: 0 0 0.5rem 0;
+  color: #1f2937;
+}
+
+.mobile-session__empty p {
+  margin: 0 0 1.5rem 0;
+  color: #6b7280;
+}
+
+.mobile-session__alert {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  text-align: center;
+  animation: blink 1s ease-in-out infinite;
+}
+
+.mobile-session__alert--danger {
+  background: #fee2e2;
+  color: #991b1b;
+  border: 2px solid #ef4444;
+}
+
+.mobile-session__card {
+  background: white;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+.mobile-session__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.mobile-session__title {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #1f2937;
+}
+
+.mobile-session__info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.mobile-session__info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mobile-session__label {
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.mobile-session__value {
+  color: #1f2937;
+  font-weight: 600;
+}
+
+.mobile-session__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.mobile-session__instructions {
+  background: #dbeafe;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border-left: 4px solid #3b82f6;
+}
+
+.mobile-session__instructions h3 {
+  margin: 0 0 0.75rem 0;
+  color: #1e40af;
+  font-size: 1rem;
+}
+
+.mobile-session__instructions ul {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: #1e3a8a;
+}
+
+.mobile-session__instructions li {
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}

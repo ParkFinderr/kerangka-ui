@@ -1,0 +1,175 @@
+.admin-dashboard {
+  padding-bottom: 2rem;
+}
+
+.admin-dashboard__critical-alert {
+  background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+  color: #991b1b;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  border: 3px solid #ef4444;
+  font-weight: 700;
+  text-align: center;
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  animation: pulse 2s ease-in-out infinite;
+  box-shadow: 0 4px 6px rgba(239, 68, 68, 0.3);
+}
+
+.admin-dashboard__stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.admin-stat-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border: 3px solid;
+  transition: transform 0.2s;
+}
+
+.admin-stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.admin-stat-card--available {
+  border-color: #10b981;
+}
+
+.admin-stat-card--booked {
+  border-color: #f59e0b;
+}
+
+.admin-stat-card--active {
+  border-color: #3b82f6;
+}
+
+.admin-stat-card--maintenance {
+  border-color: #6b7280;
+}
+
+.admin-stat-card--intrusion {
+  border-color: #dc2626;
+  animation: shake 3s ease-in-out infinite;
+}
+
+.admin-stat-card--unauthorized {
+  border-color: #ef4444;
+}
+
+.admin-stat-card__icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.admin-stat-card__value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.admin-stat-card__label {
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.admin-dashboard__section {
+  margin-bottom: 2rem;
+}
+
+.admin-dashboard__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #1f2937;
+}
+
+.admin-dashboard__system-info {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #8b5cf6;
+}
+
+.admin-dashboard__system-info h3 {
+  margin: 0 0 1rem 0;
+  color: #1f2937;
+  font-size: 1.25rem;
+}
+
+.admin-dashboard__system-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.system-stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background: #f9fafb;
+  border-radius: 0.5rem;
+}
+
+.system-stat__label {
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.system-stat__value {
+  color: #1f2937;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.system-stat__value--critical {
+  color: #ef4444;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-2px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(2px);
+  }
+}
+
+@media (max-width: 640px) {
+  .admin-dashboard__stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .admin-stat-card__icon {
+    font-size: 2rem;
+  }
+
+  .admin-stat-card__value {
+    font-size: 2rem;
+  }
+}

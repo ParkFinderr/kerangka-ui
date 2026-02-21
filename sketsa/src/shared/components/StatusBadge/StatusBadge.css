@@ -1,0 +1,38 @@
+.status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  color: white;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.status-badge--small {
+  padding: 0.125rem 0.5rem;
+  font-size: 0.75rem;
+}
+
+.status-badge--medium {
+  padding: 0.25rem 0.75rem;
+  font-size: 0.875rem;
+}
+
+.status-badge--large {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+}
+
+.status-badge--blink {
+  animation: blink 1s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
