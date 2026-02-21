@@ -23,8 +23,13 @@ export function MobileSession() {
         type: ACTION_TYPES.COMPLETE_SESSION,
         payload: { slotId: activeSession.id },
       });
+      
+      // Clear parking ticket so user must scan again
+      localStorage.removeItem('parkingTicket');
+      
       setTimeout(() => {
-        navigate('/mobile');
+        // Navigate to scan page to get new ticket
+        navigate('/mobile/scan');
       }, 1000);
     }
   };

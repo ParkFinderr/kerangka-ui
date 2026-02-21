@@ -4,12 +4,13 @@
  */
 
 import { SLOT_STATUS } from '../constants/slotStatus';
-import { getNextSlotState, EVENT_TYPES } from '../stateMachine/slotStateMachine';
+import { EVENT_TYPES, getNextSlotState } from '../stateMachine/slotStateMachine';
 
 // Action Types
 export const ACTION_TYPES = {
   SET_SLOTS: 'SET_SLOTS',
   BOOK_SLOT: 'BOOK_SLOT',
+  CANCEL_BOOKING: 'CANCEL_BOOKING',
   ACTIVATE_SESSION: 'ACTIVATE_SESSION',
   COMPLETE_SESSION: 'COMPLETE_SESSION',
   FORCE_COMPLETE: 'FORCE_COMPLETE',
@@ -68,6 +69,37 @@ export function parkingReducer(state, action) {
             id: Date.now(),
             type: 'success',
             message: `Slot ${slotId} berhasil dipesan oleh ${userName}`,
+            timestamp: new Date().toISOString(),
+          },
+        ],
+      };
+    }
+
+    case ACTION_TYPES.CANCEL_BOOKING: {
+      const { slotId } = action.payload;
+      const updatedSlots = state.slots.map((slot) => {
+        if (slot.id === slotId && slot.status === SLOT_STATUS.BOOKED) {
+          return {
+            ...slot,
+            status: SLOT_STATUS.AVAILABLE,
+            bookedBy: null,
+            userName: null,
+            vehicleNumber: null,
+            bookedAt: null,
+          };
+        }
+        return slot;
+      });
+
+      return {
+        ...state,
+        slots: updatedSlots,
+        notifications: [
+          ...state.notifications,
+          {
+            id: Date.now(),
+            type: 'info',
+            message: `Booking slot ${slotId} telah dibatalkan`,
             timestamp: new Date().toISOString(),
           },
         ],

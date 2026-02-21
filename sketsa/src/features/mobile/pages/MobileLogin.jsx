@@ -27,8 +27,20 @@ export function MobileLogin() {
     e.preventDefault();
     // TODO: Implement actual authentication later
     console.log('Login attempt:', formData);
-    // For now, just navigate to mobile home
-    navigate('/mobile/home');
+    
+    // Simulate user data (in real app, this comes from API response)
+    const userData = {
+      id: 'U001',
+      name: formData.email.split('@')[0] || 'User',
+      email: formData.email,
+      vehicle: 'B 1234 XYZ', // Default vehicle, can be updated in profile
+    };
+    
+    // Save user data to localStorage
+    localStorage.setItem('currentUser', JSON.stringify(userData));
+    
+    // Navigate to scan page to get ticket first
+    navigate('/mobile/scan');
   };
 
   return (

@@ -6,31 +6,41 @@ import { SLOT_STATUS } from '../core/constants/slotStatus';
 
 export function generateDummySlots(count = 20) {
   const slots = [];
-  const zones = ['A', 'B', 'C', 'D'];
+  
+  // Multi-floor configuration
+  // Floor 1: 12 slots (A1-A6, B1-B6)
+  // Floor 2: 8 slots (C1-C4, D1-D4)
+  const floorConfig = [
+    { floor: 1, zones: ['A', 'B'], slotsPerZone: 6 },
+    { floor: 2, zones: ['C', 'D'], slotsPerZone: 4 },
+  ];
 
-  for (let i = 1; i <= count; i++) {
-    const zone = zones[Math.floor((i - 1) / 5) % zones.length];
-    const slotNumber = ((i - 1) % 5) + 1;
-    const slotId = `${zone}${slotNumber}`;
-
-    slots.push({
-      id: slotId,
-      zone,
-      number: slotNumber,
-      status: SLOT_STATUS.AVAILABLE,
-      bookedBy: null,
-      userName: null,
-      vehicleNumber: null,
-      bookedAt: null,
-      activatedAt: null,
-      completedAt: null,
-      maintenanceReason: null,
-      maintenanceStartedAt: null,
-      intrusionDetectedAt: null,
-      unauthorizedOccupiedAt: null,
-      ghostSwapDetectedAt: null,
+  floorConfig.forEach(({ floor, zones, slotsPerZone }) => {
+    zones.forEach((zone) => {
+      for (let i = 1; i <= slotsPerZone; i++) {
+        const slotId = `${zone}${i}`;
+        slots.push({
+          id: slotId,
+          zone,
+          floor,
+          number: i,
+          position: i, // Position in zone for visual arrangement
+          status: SLOT_STATUS.AVAILABLE,
+          bookedBy: null,
+          userName: null,
+          vehicleNumber: null,
+          bookedAt: null,
+          activatedAt: null,
+          completedAt: null,
+          maintenanceReason: null,
+          maintenanceStartedAt: null,
+          intrusionDetectedAt: null,
+          unauthorizedOccupiedAt: null,
+          ghostSwapDetectedAt: null,
+        });
+      }
     });
-  }
+  });
 
   return slots;
 }

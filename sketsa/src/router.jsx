@@ -11,6 +11,7 @@ import { MobileHistory } from './features/mobile/pages/MobileHistory';
 import { MobileHome } from './features/mobile/pages/MobileHome';
 import { MobileLogin } from './features/mobile/pages/MobileLogin';
 import { MobileProfile } from './features/mobile/pages/MobileProfile';
+import { MobileScan } from './features/mobile/pages/MobileScan';
 import { MobileSession } from './features/mobile/pages/MobileSession';
 import { MobileSettings } from './features/mobile/pages/MobileSettings';
 import { MobileSignup } from './features/mobile/pages/MobileSignup';
@@ -30,6 +31,10 @@ export const router = createBrowserRouter([
   {
     path: '/mobile/signup',
     element: <MobileSignup />,
+  },
+  {
+    path: '/mobile/scan',
+    element: <MobileScan />,
   },
   {
     path: '/mobile',

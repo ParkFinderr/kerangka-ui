@@ -1,79 +1,223 @@
+/**
+ * Enhanced Slot Card Styles - 3D Parking Slot Visual
+ */
+
 .slot-card {
-  background: white;
-  border: 3px solid;
+  position: relative;
+  background: linear-gradient(145deg, #f9fafb 0%, #e5e7eb 100%);
   border-radius: 0.75rem;
-  padding: 1rem;
+  padding: 0;
   cursor: pointer;
-  transition: all 0.2s;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    0 2px 4px -1px rgba(0, 0, 0, 0.1),
+    0 1px 2px -1px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  min-height: 120px;
+  max-height: 140px;
 }
 
+/* Status-based backgrounds */
+.slot-card[data-status="AVAILABLE"] {
+  background: linear-gradient(145deg, #d1fae5 0%, #a7f3d0 100%);
+  border: 2px solid #10b981;
+}
+
+.slot-card[data-status="BOOKED"] {
+  background: linear-gradient(145deg, #fef3c7 0%, #fde68a 100%);
+  border: 2px solid #f59e0b;
+}
+
+.slot-card[data-status="ACTIVE"] {
+  background: linear-gradient(145deg, #dbeafe 0%, #bfdbfe 100%);
+  border: 2px solid #3b82f6;
+}
+
+.slot-card[data-status="MAINTENANCE"] {
+  background: linear-gradient(145deg, #f3f4f6 0%, #d1d5db 100%);
+  border: 2px solid #6b7280;
+}
+
+.slot-card[data-status="INTRUSION"] {
+  background: linear-gradient(145deg, #fee2e2 0%, #fecaca 100%);
+  border: 2px solid #ef4444;
+  animation: pulse-danger 2s ease-in-out infinite;
+}
+
+.slot-card[data-status="OCCUPIED_UNAUTHORIZED"] {
+  background: linear-gradient(145deg, #fed7aa 0%, #fdba74 100%);
+  border: 2px solid #f97316;
+}
+
+/* Hover effects */
 .slot-card:hover:not(.slot-card--disabled) {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 
+    0 20px 25px -5px rgba(0, 0, 0, 0.15),
+    0 10px 10px -5px rgba(0, 0, 0, 0.1);
+}
+
+.slot-card--available:hover {
+  border-color: #059669;
+  box-shadow: 
+    0 20px 25px -5px rgba(16, 185, 129, 0.4),
+    0 10px 10px -5px rgba(16, 185, 129, 0.2);
 }
 
 .slot-card--disabled {
-  opacity: 0.7;
+  opacity: 0.6;
   cursor: not-allowed;
+  filter: grayscale(20%);
 }
 
 .slot-card--intrusion {
-  animation: pulse 1s ease-in-out infinite;
+  animation: pulse-danger 2s ease-in-out infinite;
 }
 
-.slot-card__header {
+/* 3D Container */
+.slot-card__container {
+  position: relative;
+  padding: 1.25rem;
+  height: 100%;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  margin-bottom: 0.5rem;
+  justify-content: center;
+  perspective: 1000px;
 }
 
-.slot-card__id {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin: 0;
-  color: #1f2937;
-}
-
-.slot-card__details {
-  margin-top: 0.75rem;
-  padding-top: 0.75rem;
-  border-top: 1px solid #e5e7eb;
-}
-
-.slot-card__detail {
+/* Parking Lines (3D perspective) */
+.slot-card__lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 0.25rem;
-  font-size: 0.875rem;
+  padding: 0 10%;
+  pointer-events: none;
 }
 
-.slot-card__label {
-  color: #6b7280;
-  font-weight: 500;
+.slot-card__line {
+  width: 4px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 2px;
+  transform: perspective(300px) rotateX(60deg);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.slot-card__value {
+.slot-card__line--left {
+  transform-origin: top left;
+}
+
+.slot-card__line--right {
+  transform-origin: top right;
+}
+
+/* Vehicle Area */
+.slot-card__vehicle-area {
+  position: relative;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.5rem 0;
+  z-index: 2;
+}
+
+/* Car Icon */
+.slot-card__car {
+  width: 80%;
+  max-width: 100px;
   color: #1f2937;
-  font-weight: 600;
+  animation: car-enter 0.6s ease-out;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
 }
 
-.slot-card__indicator {
-  margin-top: 0.5rem;
-  padding: 0.25rem 0.5rem;
-  border-radius: 0.25rem;
-  text-align: center;
-  font-size: 0.75rem;
-  font-weight: 600;
+.slot-card__car svg {
+  width: 100%;
+  height: auto;
 }
 
-.slot-card__indicator--available {
-  background: #d1fae5;
-  color: #065f46;
+@keyframes car-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
-@keyframes pulse {
+/* Empty Indicator */
+.slot-card__empty-indicator {
+  width: 64px;
+  height: 64px;
+  background: rgba(16, 185, 129, 0.2);
+  border: 3px dashed rgba(16, 185, 129, 0.5);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #059669;
+  animation: pulse-available 2s ease-in-out infinite;
+}
+
+.slot-card__empty-indicator .slot-card__status-icon {
+  width: 32px;
+  height: 32px;
+}
+
+@keyframes pulse-available {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+/* Maintenance Indicator */
+.slot-card__maintenance-indicator {
+  width: 64px;
+  height: 64px;
+  background: rgba(107, 114, 128, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4b5563;
+}
+
+.slot-card__maintenance-indicator .slot-card__status-icon {
+  width: 32px;
+  height: 32px;
+}
+
+/* Alert Indicator */
+.slot-card__alert-indicator {
+  width: 64px;
+  height: 64px;
+  background: rgba(239, 68, 68, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #dc2626;
+  animation: pulse-danger 1.5s ease-in-out infinite;
+}
+
+.slot-card__alert-indicator .slot-card__status-icon {
+  width: 32px;
+  height: 32px;
+}
+
+@keyframes pulse-danger {
   0%, 100% {
     transform: scale(1);
     box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
@@ -83,3 +227,255 @@
     box-shadow: 0 0 0 10px rgba(239, 68, 68, 0);
   }
 }
+
+/* ID Badge */
+.slot-card__id-badge {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  background: white;
+  padding: 0.25rem 0.625rem;
+  border-radius: 0.375rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  border: 1.5px solid #e5e7eb;
+  z-index: 4;
+  transition: all 0.3s ease;
+}
+
+.slot-card:hover .slot-card__id-badge {
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.slot-card__id {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #1f2937;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* ID Badge color variants based on slot status */
+.slot-card[data-status="AVAILABLE"] .slot-card__id-badge {
+  border-color: #10b981;
+  background: #ecfdf5;
+}
+
+.slot-card[data-status="AVAILABLE"] .slot-card__id {
+  color: #065f46;
+}
+
+.slot-card[data-status="BOOKED"] .slot-card__id-badge,
+.slot-card[data-status="ACTIVE"] .slot-card__id-badge {
+  border-color: #3b82f6;
+  background: #eff6ff;
+}
+
+.slot-card[data-status="BOOKED"] .slot-card__id,
+.slot-card[data-status="ACTIVE"] .slot-card__id {
+  color: #1e40af;
+}
+
+.slot-card[data-status="MAINTENANCE"] .slot-card__id-badge {
+  border-color: #6b7280;
+  background: #f9fafb;
+}
+
+.slot-card[data-status="MAINTENANCE"] .slot-card__id {
+  color: #374151;
+}
+
+.slot-card[data-status="INTRUSION"] .slot-card__id-badge,
+.slot-card[data-status="OCCUPIED_UNAUTHORIZED"] .slot-card__id-badge {
+  border-color: #ef4444;
+  background: #fef2f2;
+}
+
+.slot-card[data-status="INTRUSION"] .slot-card__id,
+.slot-card[data-status="OCCUPIED_UNAUTHORIZED"] .slot-card__id {
+  color: #991b1b;
+}
+
+/* Status Badge */
+.slot-card__status-badge {
+  position: absolute;
+  top: 0.375rem;
+  right: 0.375rem;
+  z-index: 4;
+}
+
+/* Details Section */
+.slot-card__details {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 0.75rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 3;
+}
+
+.slot-card__detail {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: #4b5563;
+}
+
+.slot-card__detail svg {
+  flex-shrink: 0;
+  opacity: 0.6;
+}
+
+.slot-card__value {
+  font-weight: 600;
+  color: #1f2937;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Hover Hint */
+.slot-card__hover-hint {
+  position: absolute;
+  bottom: 0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(16, 185, 129, 0.95);
+  color: white;
+  padding: 0.375rem 0.75rem;
+  border-radius: 2rem;
+  font-size: 0.625rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  opacity: 0;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  z-index: 4;
+}
+
+.slot-card__hover-hint svg {
+  width: 12px;
+  height: 12px;
+}
+
+.slot-card--available:hover .slot-card__hover-hint {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-8px);
+}
+
+/* Dark Theme Support */
+:root.theme-dark .slot-card {
+  background: linear-gradient(145deg, #1f2937 0%, #111827 100%);
+}
+
+:root.theme-dark .slot-card[data-status="AVAILABLE"] {
+  background: linear-gradient(145deg, #065f46 0%, #047857 100%);
+}
+
+:root.theme-dark .slot-card__id-badge,
+:root.theme-dark .slot-card__details {
+  background: rgba(31, 41, 55, 0.95);
+}
+
+:root.theme-dark .slot-card__id,
+:root.theme-dark .slot-card__value {
+  color: #f9fafb;
+}
+
+:root.theme-dark .slot-card__detail {
+  color: #9ca3af;
+}
+
+:root.theme-dark .slot-card__car {
+  color: #f9fafb;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .slot-card {
+    min-height: 140px;
+  }
+
+  .slot-card__vehicle-area {
+    height: 60px;
+  }
+
+  .slot-card__car {
+    max-width: 80px;
+  }
+
+  .slot-card__empty-indicator,
+  .slot-card__maintenance-indicator,
+  .slot-card__alert-indicator {
+    width: 48px;
+    height: 48px;
+  }
+
+  .slot-card__empty-indicator .slot-card__status-icon,
+  .slot-card__maintenance-indicator .slot-card__status-icon,
+  .slot-card__alert-indicator .slot-card__status-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .slot-card__id-badge {
+    padding: 0.25rem 0.5rem;
+    top: 0.375rem;
+    left: 0.375rem;
+    border-width: 1px;
+  }
+
+  .slot-card__id {
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  .slot-card__hover-hint {
+    font-size: 0.5rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .slot-card__hover-hint svg {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+/* Animation for initial load */
+.slot-card {
+  animation: slot-appear 0.4s ease-out backwards;
+}
+
+@keyframes slot-appear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Stagger animation delay (applied via JavaScript or nth-child) */
+.slot-card:nth-child(1) { animation-delay: 0.05s; }
+.slot-card:nth-child(2) { animation-delay: 0.1s; }
+.slot-card:nth-child(3) { animation-delay: 0.15s; }
+.slot-card:nth-child(4) { animation-delay: 0.2s; }
+.slot-card:nth-child(5) { animation-delay: 0.25s; }
+.slot-card:nth-child(6) { animation-delay: 0.3s; }
+.slot-card:nth-child(7) { animation-delay: 0.35s; }
+.slot-card:nth-child(8) { animation-delay: 0.4s; }
+.slot-card:nth-child(9) { animation-delay: 0.45s; }
+.slot-card:nth-child(10) { animation-delay: 0.5s; }

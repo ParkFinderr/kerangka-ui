@@ -22,8 +22,11 @@ export function MobileProfile() {
   });
 
   const handleLogout = () => {
-    // TODO: Implement actual logout logic
-    console.log('Logout');
+    // Clear user session and parking ticket
+    localStorage.removeItem('currentUser');
+    localStorage.removeItem('parkingTicket');
+    
+    // Navigate to login page
     navigate('/mobile/login');
   };
 
@@ -162,6 +165,13 @@ export function MobileProfile() {
       </div>
 
       <div className="mobile-profile__actions">
+        <Button 
+          variant="outline" 
+          fullWidth 
+          onClick={() => navigate('/mobile')}
+        >
+          Kembali ke Beranda
+        </Button>
         <Button 
           variant="danger" 
           fullWidth 
