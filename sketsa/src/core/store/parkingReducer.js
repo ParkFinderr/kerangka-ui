@@ -9,6 +9,8 @@ import { EVENT_TYPES, getNextSlotState } from '../stateMachine/slotStateMachine'
 // Action Types
 export const ACTION_TYPES = {
   SET_SLOTS: 'SET_SLOTS',
+  ADD_SLOT: 'ADD_SLOT',
+  REMOVE_SLOT: 'REMOVE_SLOT',
   BOOK_SLOT: 'BOOK_SLOT',
   CANCEL_BOOKING: 'CANCEL_BOOKING',
   ACTIVATE_SESSION: 'ACTIVATE_SESSION',
@@ -42,6 +44,59 @@ export function parkingReducer(state, action) {
         ...state,
         slots: action.payload,
       };
+
+    case ACTION_TYPES.ADD_SLOT: {
+      const { id, zone, position, status } = action.payload;
+      const newSlot = {
+        id,
+        zone,
+        position: parseInt(position),
+        status: status || SLOT_STATUS.AVAILABLE,
+        bookedBy: null,
+        userName: null,
+        vehicleNumber: null,
+        bookedAt: null,
+        maintenanceReason: null,
+        lastStatusChange: new Date().toISOString(),
+      };
+
+      return {
+        ...state,
+        slots: [...state.slots, newSlot].sort((a, b) => {
+          // Sort by zone then position
+          if (a.zone !== b.zone) return a.zone.localeCompare(b.zone);
+          return a.position - b.position;
+        }),
+        notifications: [
+          ...state.notifications,
+          {
+            id: Date.now(),
+            type: 'success',
+            message: `Slot ${id} berhasil ditambahkan`,
+            timestamp: new Date().toISOString(),
+          },
+        ],
+      };
+    }
+
+    case ACTION_TYPES.REMOVE_SLOT: {
+      const { slotId } = action.payload;
+      const updatedSlots = state.slots.filter((slot) => slot.id !== slotId);
+
+      return {
+        ...state,
+        slots: updatedSlots,
+        notifications: [
+          ...state.notifications,
+          {
+            id: Date.now(),
+            type: 'info',
+            message: `Slot ${slotId} telah dihapus`,
+            timestamp: new Date().toISOString(),
+          },
+        ],
+      };
+    }
 
     case ACTION_TYPES.BOOK_SLOT: {
       const { slotId, userId, userName, vehicleNumber } = action.payload;

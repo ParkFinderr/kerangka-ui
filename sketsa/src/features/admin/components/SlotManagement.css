@@ -1,0 +1,306 @@
+/* Slot Management Styles */
+
+.slot-management {
+  background: var(--color-bg-primary, white);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px var(--color-shadow, rgba(0, 0, 0, 0.1));
+  transition: all 0.3s ease;
+}
+
+.slot-management__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--color-border, #e2e8f0);
+}
+
+.slot-management__title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text-primary, #1a202c);
+}
+
+.slot-management__add-form {
+  background: var(--color-bg-secondary, #f7fafc);
+  padding: 1.25rem;
+  border-radius: 0.75rem;
+  margin-bottom: 1.5rem;
+  border: 2px dashed var(--color-border, #cbd5e0);
+}
+
+.slot-management__form-title {
+  margin: 0 0 1rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-text-primary, #2d3748);
+}
+
+.slot-management__form-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.slot-management__form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.slot-management__label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-primary, #2d3748);
+}
+
+.slot-management__select,
+.slot-management__input {
+  padding: 0.75rem;
+  border: 2px solid var(--color-border, #e2e8f0);
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+  background: var(--color-bg-primary, white);
+  color: var(--color-text-primary, #1a202c);
+}
+
+.slot-management__select:focus,
+.slot-management__input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.slot-management__preview {
+  padding: 0.75rem;
+  background: var(--color-bg-primary, white);
+  border: 2px solid #3b82f6;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-align: center;
+  color: #3b82f6;
+}
+
+.slot-management__search {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.slot-management__search-input {
+  flex: 1;
+  padding: 0.875rem 1rem;
+  border: 2px solid var(--color-border, #e2e8f0);
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+  background: var(--color-bg-primary, white);
+}
+
+.slot-management__search-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+.slot-management__count {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-secondary, #718096);
+  white-space: nowrap;
+}
+
+.slot-management__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.slot-management__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: var(--color-bg-secondary, #f7fafc);
+  border: 2px solid var(--color-border, #e2e8f0);
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+}
+
+.slot-management__item:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.1);
+}
+
+.slot-management__item-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+.slot-management__item-id {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text-primary, #1a202c);
+  min-width: 60px;
+}
+
+.slot-management__item-status {
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.375rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.slot-badge--available {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.slot-badge--booked {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.slot-badge--active {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.slot-badge--maintenance {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.slot-management__item-note {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary, #718096);
+  font-style: italic;
+}
+
+.slot-management__item-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.slot-management__btn {
+  padding: 0.5rem 0.875rem;
+  border: none;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.slot-management__btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.slot-management__btn--block {
+  background: #fbbf24;
+  color: #78350f;
+}
+
+.slot-management__btn--block:hover:not(:disabled) {
+  background: #f59e0b;
+}
+
+.slot-management__btn--unblock {
+  background: #10b981;
+  color: white;
+}
+
+.slot-management__btn--unblock:hover:not(:disabled) {
+  background: #059669;
+}
+
+.slot-management__btn--delete {
+  background: #ef4444;
+  color: white;
+}
+
+.slot-management__btn--delete:hover:not(:disabled) {
+  background: #dc2626;
+}
+
+.slot-management__empty {
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.1rem;
+  color: var(--color-text-secondary, #718096);
+  background: var(--color-bg-secondary, #f7fafc);
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.slot-management__summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--color-bg-secondary, #f7fafc);
+  border-radius: 0.5rem;
+}
+
+.slot-management__summary-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.slot-management__summary-label {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary, #718096);
+  font-weight: 500;
+}
+
+.slot-management__summary-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text-primary, #1a202c);
+}
+
+.slot-management__summary-value--available {
+  color: #10b981;
+}
+
+.slot-management__summary-value--maintenance {
+  color: #f59e0b;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .slot-management__form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .slot-management__item {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .slot-management__item-actions {
+    width: 100%;
+  }
+
+  .slot-management__btn {
+    flex: 1;
+  }
+
+  .slot-management__summary {
+    grid-template-columns: 1fr;
+  }
+}
