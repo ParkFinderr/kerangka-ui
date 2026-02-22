@@ -30,6 +30,477 @@
   border: 2px solid #f59e0b;
 }
 
+.quick-dashboard__ticket-info {
+  margin-bottom: 1.5rem;
+}
+
+.ticket-info-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  color: white;
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.25);
+  transition: all 0.3s ease;
+}
+
+.ticket-info-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 40px rgba(102, 126, 234, 0.35);
+}
+
+.ticket-info-card__header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.ticket-info-card__icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+}
+
+.ticket-info-card__text {
+  flex: 1;
+  min-width: 0;
+}
+
+.ticket-info-card__title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0.9;
+}
+
+.ticket-info-card__id {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 1px;
+}
+
+.ticket-info-card__vehicle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 1px;
+  backdrop-filter: blur(10px);
+  width: fit-content;
+}
+
+.ticket-info-card__vehicle svg {
+  opacity: 0.9;
+}
+
+.ticket-info-card__status {
+  flex-shrink: 0;
+}
+
+.ticket-info-card__badge {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ticket-info-card__badge--active {
+  background: rgba(16, 185, 129, 0.2);
+  color: #d1fae5;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.ticket-info-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ticket-info-card__time {
+  font-size: 0.875rem;
+  opacity: 0.9;
+}
+
+/* Active Booking Card */
+.quick-dashboard__active-booking {
+  margin-bottom: 1.5rem;
+}
+
+.active-booking-card {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  color: white;
+  box-shadow: 0 10px 30px rgba(16, 185, 129, 0.25);
+  transition: all 0.3s ease;
+}
+
+.active-booking-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 40px rgba(16, 185, 129, 0.35);
+}
+
+.active-booking-card__header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.active-booking-card__icon {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+}
+
+.active-booking-card__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.active-booking-card__title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0.9;
+}
+
+.active-booking-card__slot {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.active-booking-card__status {
+  flex-shrink: 0;
+}
+
+.active-booking-card__badge {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.active-booking-card__badge--booked {
+  background: rgba(59, 130, 246, 0.2);
+  color: #dbeafe;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.active-booking-card__badge--active {
+  background: rgba(251, 191, 36, 0.2);
+  color: #fef3c7;
+  border: 1px solid rgba(251, 191, 36, 0.3);
+}
+
+.active-booking-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.active-booking-card__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  backdrop-filter: blur(10px);
+}
+
+.active-booking-card__label {
+  font-weight: 500;
+  opacity: 0.9;
+  font-size: 0.875rem;
+}
+
+.active-booking-card__value {
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.active-booking-card__actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.active-booking-card__button {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.2s;
+}
+
+.active-booking-card__button--navigate {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.active-booking-card__button--navigate:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.active-booking-card__button--cancel {
+  background: rgba(239, 68, 68, 0.2);
+  color: #fecaca;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.active-booking-card__button--cancel:hover {
+  background: rgba(239, 68, 68, 0.3);
+}
+
+/* Booking Dialog */
+.booking-dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.booking-dialog {
+  background: white;
+  border-radius: 1.5rem;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.booking-dialog__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.booking-dialog__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+}
+
+.booking-dialog__close {
+  background: none;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+}
+
+.booking-dialog__close:hover {
+  background: #f3f4f6;
+  color: #1f2937;
+}
+
+.booking-dialog__content {
+  padding: 1.5rem;
+}
+
+.booking-dialog__slot-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 1rem;
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+.booking-dialog__slot-icon {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+}
+
+.booking-dialog__slot-details {
+  flex: 1;
+}
+
+.booking-dialog__slot-id {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 0.25rem 0;
+  letter-spacing: 1px;
+}
+
+.booking-dialog__slot-zone {
+  font-size: 1rem;
+  margin: 0;
+  opacity: 0.9;
+}
+
+.booking-dialog__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.booking-dialog__info-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background: #f9fafb;
+  border-radius: 0.5rem;
+  color: #1f2937;
+  font-size: 0.95rem;
+}
+
+.booking-dialog__info-row svg {
+  color: #667eea;
+  flex-shrink: 0;
+}
+
+.booking-dialog__note {
+  display: flex;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: #eff6ff;
+  border-radius: 0.75rem;
+  border: 1px solid #dbeafe;
+  color: #1e40af;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.booking-dialog__note svg {
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+}
+
+.booking-dialog__note p {
+  margin: 0;
+}
+
+.booking-dialog__actions {
+  display: flex;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.booking-dialog__button {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.2s;
+}
+
+.booking-dialog__button--cancel {
+  background: #f3f4f6;
+  color: #6b7280;
+}
+
+.booking-dialog__button--cancel:hover {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.booking-dialog__button--confirm {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+}
+
+.booking-dialog__button--confirm:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+}
+
 .quick-dashboard__stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -41,73 +512,193 @@
   background: white;
   padding: 1.5rem;
   border-radius: 0.75rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  border-top: 4px solid;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-left: 4px solid;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
 }
 
 .stat-card--available {
   border-color: #10b981;
 }
 
+.stat-card--available .stat-card__icon {
+  background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+  color: #059669;
+}
+
 .stat-card--occupied {
   border-color: #3b82f6;
+}
+
+.stat-card--occupied .stat-card__icon {
+  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+  color: #2563eb;
 }
 
 .stat-card--total {
   border-color: #8b5cf6;
 }
 
-.stat-card--maintenance {
-  border-color: #6b7280;
+.stat-card--total .stat-card__icon {
+  background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%);
+  color: #7c3aed;
+}
+
+.stat-card__icon {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-card__content {
+  flex: 1;
+  min-width: 0;
 }
 
 .stat-card__value {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 700;
   color: #1f2937;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
+  line-height: 1;
 }
 
 .stat-card__label {
-  font-size: 1rem;
+  font-size: 0.875rem;
   color: #6b7280;
   font-weight: 500;
 }
 
-.quick-dashboard__occupancy {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 0.75rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+/* Download App Section */
+.quick-dashboard__download {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 1rem;
+  padding: 2rem;
   margin-bottom: 2rem;
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.25);
 }
 
-.quick-dashboard__occupancy-header {
+.quick-dashboard__download-content {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.quick-dashboard__download-info {
+  display: flex;
   align-items: center;
-  margin-bottom: 1rem;
-  font-weight: 600;
+  gap: 1.5rem;
+  color: white;
+}
+
+.quick-dashboard__download-icon {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+}
+
+.quick-dashboard__download-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.quick-dashboard__download-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0 0 0.75rem 0;
+  color: white;
+}
+
+.quick-dashboard__download-desc {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.quick-dashboard__download-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.download-button {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background: white;
+  border: none;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.download-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.download-button:active {
+  transform: translateY(0);
+}
+
+.download-button--android {
+  color: #3ddc84;
+}
+
+.download-button--ios {
+  color: #000000;
+}
+
+.download-button__icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.download-button__text {
+  flex: 1;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.download-button__label {
+  font-size: 0.75rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.download-button__platform {
+  font-size: 1.125rem;
+  font-weight: 700;
   color: #1f2937;
-}
-
-.quick-dashboard__occupancy-percentage {
-  font-size: 1.5rem;
-  color: #3b82f6;
-}
-
-.quick-dashboard__occupancy-bar {
-  height: 2rem;
-  background: #e5e7eb;
-  border-radius: 9999px;
-  overflow: hidden;
-}
-
-.quick-dashboard__occupancy-fill {
-  height: 100%;
-  background: linear-gradient(90deg, #10b981 0%, #3b82f6 100%);
-  transition: width 0.5s ease;
 }
 
 .quick-dashboard__section {
@@ -121,43 +712,6 @@
   color: #1f2937;
 }
 
-.quick-dashboard__legend {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 0.75rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.quick-dashboard__legend h3 {
-  margin: 0 0 1rem 0;
-  font-size: 1.125rem;
-  color: #1f2937;
-}
-
-.quick-dashboard__legend-items {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 1rem;
-}
-
-.legend-item {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.875rem;
-  color: #374151;
-}
-
-.legend-dot {
-  width: 1rem;
-  height: 1rem;
-  border-radius: 50%;
-}
-
-.legend-dot--blink {
-  animation: blink 1s ease-in-out infinite;
-}
-
 @keyframes pulse {
   0%, 100% {
     transform: scale(1);
@@ -167,22 +721,217 @@
   }
 }
 
-@keyframes blink {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.3;
-  }
-}
-
 @media (max-width: 640px) {
   .quick-dashboard__stats {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: 1rem;
   }
 
+  .stat-card {
+    padding: 1.25rem;
+  }
+
+  .stat-card__icon {
+    width: 48px;
+    height: 48px;
+  }
+
   .stat-card__value {
-    font-size: 2rem;
+    font-size: 1.5rem;
+  }
+
+  .stat-card__label {
+    font-size: 0.8125rem;
+  }
+
+  .quick-dashboard__alert {
+    padding: 0.875rem 1.25rem;
+    font-size: 1rem;
+  }
+
+  .quick-dashboard__title {
+    font-size: 1.25rem;
+  }
+
+  .quick-dashboard__download {
+    padding: 1.5rem;
+  }
+
+  .quick-dashboard__download-content {
+    gap: 1.5rem;
+  }
+
+  .quick-dashboard__download-info {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .quick-dashboard__download-icon {
+    width: 64px;
+    height: 64px;
+  }
+
+  .quick-dashboard__download-icon svg {
+    width: 36px;
+    height: 36px;
+  }
+
+  .quick-dashboard__download-title {
+    font-size: 1.375rem;
+  }
+
+  .quick-dashboard__download-desc {
+    font-size: 0.9375rem;
+  }
+
+  .quick-dashboard__download-buttons {
+    flex-direction: column;
+  }
+
+  .download-button {
+    min-width: 100%;
+    padding: 0.875rem 1.25rem;
+  }
+
+  .download-button__icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .download-button__platform {
+    font-size: 1rem;
+  }
+}
+
+/* End Session Confirmation Dialog */
+.end-session-dialog {
+  background: white;
+  border-radius: 1.5rem;
+  max-width: 450px;
+  width: 100%;
+  padding: 2rem;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.3s ease-out;
+  text-align: center;
+}
+
+.end-session-dialog__icon {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  color: #f59e0b;
+}
+
+.end-session-dialog__title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 1rem 0;
+}
+
+.end-session-dialog__message {
+  font-size: 1.125rem;
+  color: #6b7280;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.6;
+}
+
+.end-session-dialog__warning {
+  display: flex;
+  gap: 1rem;
+  padding: 1.25rem;
+  background: #fef3c7;
+  border: 2px solid #fbbf24;
+  border-radius: 0.75rem;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.end-session-dialog__warning svg {
+  flex-shrink: 0;
+  color: #f59e0b;
+  margin-top: 0.25rem;
+}
+
+.end-session-dialog__warning strong {
+  display: block;
+  color: #92400e;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.end-session-dialog__warning p {
+  margin: 0;
+  color: #92400e;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.end-session-dialog__actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.end-session-dialog__button {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.2s;
+}
+
+.end-session-dialog__button--cancel {
+  background: #f3f4f6;
+  color: #6b7280;
+}
+
+.end-session-dialog__button--cancel:hover {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.end-session-dialog__button--confirm {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: white;
+}
+
+.end-session-dialog__button--confirm:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(239, 68, 68, 0.3);
+}
+
+@media (max-width: 640px) {
+  .end-session-dialog {
+    padding: 1.5rem;
+  }
+
+  .end-session-dialog__title {
+    font-size: 1.5rem;
+  }
+
+  .end-session-dialog__message {
+    font-size: 1rem;
+  }
+
+  .end-session-dialog__warning {
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+
+  .end-session-dialog__actions {
+    flex-direction: column-reverse;
+  }
+
+  .end-session-dialog__button {
+    width: 100%;
   }
 }

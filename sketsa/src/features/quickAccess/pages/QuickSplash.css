@@ -1,0 +1,260 @@
+/**
+ * Quick Splash Screen Styles
+ */
+
+.quick-splash {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 2rem;
+  opacity: 0;
+  transition: opacity 0.8s ease-in;
+}
+
+.quick-splash--fade-in {
+  opacity: 1;
+}
+
+.quick-splash__content {
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  animation: quick-splash-slide-up 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.2s backwards;
+}
+
+/* Logo */
+.quick-splash__logo {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 2rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  animation: quick-splash-pulse 2s ease-in-out infinite;
+}
+
+/* Welcome Text */
+.quick-splash__welcome {
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.quick-splash__title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.quick-splash__subtitle {
+  font-size: 1.125rem;
+  font-weight: 400;
+  opacity: 0.95;
+  margin-bottom: 0.25rem;
+}
+
+.quick-splash__brand {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(to right, #ffffff, #f0f9ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Description */
+.quick-splash__description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2.5rem;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Continue Button */
+.quick-splash__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 2.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #667eea;
+  background: white;
+  border: none;
+  border-radius: 3rem;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  margin-bottom: 3rem;
+}
+
+.quick-splash__button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+}
+
+.quick-splash__button:active {
+  transform: translateY(0);
+}
+
+.quick-splash__button svg {
+  transition: transform 0.3s ease;
+}
+
+.quick-splash__button:hover svg {
+  transform: translateX(4px);
+}
+
+/* Features */
+.quick-splash__features {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.quick-splash__feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+.quick-splash__feature svg {
+  width: 32px;
+  height: 32px;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 0.75rem;
+  backdrop-filter: blur(10px);
+}
+
+/* Copyright */
+.quick-splash__copyright {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.quick-splash__copyright p {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.quick-splash__copyright strong {
+  color: white;
+  font-weight: 700;
+}
+
+.quick-splash__about-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid transparent;
+  margin-left: 0.25rem;
+}
+
+.quick-splash__about-link:hover {
+  border-bottom-color: white;
+  opacity: 0.9;
+}
+
+/* Animations */
+@keyframes quick-splash-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes quick-splash-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .quick-splash {
+    padding: 1.5rem;
+  }
+
+  .quick-splash__logo {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 1.5rem;
+  }
+
+  .quick-splash__logo svg {
+    width: 80px;
+    height: 80px;
+  }
+
+  .quick-splash__title {
+    font-size: 1.5rem;
+  }
+
+  .quick-splash__brand {
+    font-size: 2rem;
+  }
+
+  .quick-splash__description {
+    font-size: 0.9375rem;
+    margin-bottom: 2rem;
+  }
+
+  .quick-splash__button {
+    padding: 0.875rem 2rem;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .quick-splash__features {
+    gap: 1.5rem;
+  }
+
+  .quick-splash__feature {
+    font-size: 0.8125rem;
+  }
+
+  .quick-splash__feature svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .quick-splash__copyright {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+  }
+
+  .quick-splash__copyright p {
+    font-size: 0.8125rem;
+  }
+}

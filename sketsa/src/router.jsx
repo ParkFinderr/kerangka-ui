@@ -16,7 +16,10 @@ import { MobileSession } from './features/mobile/pages/MobileSession';
 import { MobileSettings } from './features/mobile/pages/MobileSettings';
 import { MobileSignup } from './features/mobile/pages/MobileSignup';
 import { QuickLayout } from './features/quickAccess/QuickLayout';
+import { QuickAbout } from './features/quickAccess/pages/QuickAbout';
 import { QuickDashboard } from './features/quickAccess/pages/QuickDashboard';
+import { QuickScan } from './features/quickAccess/pages/QuickScan';
+import { QuickSplash } from './features/quickAccess/pages/QuickSplash';
 import { HomePage } from './pages/HomePage';
 
 export const router = createBrowserRouter([
@@ -71,12 +74,24 @@ export const router = createBrowserRouter([
     ],
   },
   {
+    path: '/quick/scan',
+    element: <QuickScan />,
+  },
+  {
     path: '/quick',
     element: <QuickLayout />,
     children: [
       {
         index: true,
+        element: <QuickSplash />,
+      },
+      {
+        path: 'dashboard',
         element: <QuickDashboard />,
+      },
+      {
+        path: 'about',
+        element: <QuickAbout />,
       },
     ],
   },
