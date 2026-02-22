@@ -77,7 +77,116 @@ src/
     └── HomePage.jsx            # Role selection page
 ```
 
-## 🚀 Getting Started
+## � Daftar Halaman Per Platform
+
+### 1. Mobile User Interface
+Platform mobile untuk pengguna akhir (end-user) dengan autentikasi dan manajemen sesi parkir.
+
+**Halaman Tersedia:**
+
+| Halaman | File | Deskripsi |
+|---------|------|-----------|
+| **Login** | `MobileLogin.jsx` | Halaman login untuk pengguna mobile |
+| **Signup** | `MobileSignup.jsx` | Halaman registrasi akun baru |
+| **Home** | `MobileHome.jsx` | Dashboard utama dengan daftar slot parkir tersedia dan booking |
+| **Scan** | `MobileScan.jsx` | Interface scan QR code untuk aktivasi/check-in slot |
+| **Session** | `MobileSession.jsx` | Monitor dan kelola sesi parkir aktif pengguna |
+| **History** | `MobileHistory.jsx` | Riwayat transaksi dan sesi parkir sebelumnya |
+| **Profile** | `MobileProfile.jsx` | Informasi profil pengguna dan statistik |
+| **Edit Profile** | `MobileEditProfile.jsx` | Form edit data profil pengguna |
+| **Settings** | `MobileSettings.jsx` | Pengaturan aplikasi dan preferensi pengguna |
+
+**Flow Utama:**
+```
+Login/Signup → Home (Browse & Book) → Scan (Activate) → Session (Monitor) → Complete
+                 ↓                                            ↓
+              Profile ←→ Edit Profile                    History
+                 ↓
+              Settings
+```
+
+---
+
+### 2. Quick Access Interface
+Platform web publik untuk informasi real-time tanpa autentikasi, cocok untuk display di area publik.
+
+**Halaman Tersedia:**
+
+| Halaman | File | Deskripsi |
+|---------|------|-----------|
+| **Splash** | `QuickSplash.jsx` | Halaman pembuka/splash screen Quick Access |
+| **Dashboard** | `QuickDashboard.jsx` | Dashboard publik read-only dengan status slot real-time |
+| **Scan** | `QuickScan.jsx` | Interface scan QR untuk quick check (tanpa login) |
+| **About** | `QuickAbout.jsx` | Informasi tentang sistem dan cara penggunaan |
+
+**Flow Utama:**
+```
+Splash → Dashboard (Main View)
+           ↓
+     Scan / About
+```
+
+**Use Case:**
+- Display monitor di pintu masuk
+- Kiosk informasi di area parkir
+- Dashboard publik untuk pengunjung
+
+---
+
+### 3. Admin Dashboard
+Platform web untuk administrator dengan kontrol penuh sistem dan monitoring.
+
+**Halaman Tersedia:**
+
+| Halaman | File | Deskripsi |
+|---------|------|-----------|
+| **Login** | `AdminLogin.jsx` | Halaman login khusus admin dengan autentikasi |
+| **Dashboard** | `AdminDashboard.jsx` | Dashboard admin dengan control panel, monitoring, dan simulasi events |
+
+**Komponen Tambahan di Admin:**
+
+| Komponen | File | Fungsi |
+|----------|------|--------|
+| **Control Panel** | `ControlPanel.jsx` | Panel kontrol untuk simulasi events (intrusion, ghost swap, parkir liar, maintenance, dll) |
+| **Slot Management** | `SlotManagement.jsx` | Manajemen slot parkir (tambah/edit/hapus) |
+| **Maintenance Management** | `MaintenanceManagement.jsx` | Kelola mode maintenance untuk slot |
+| **Notification Center** | `NotificationCenter.jsx` | Pusat notifikasi dan alert sistem |
+
+**Flow Utama:**
+```
+Admin Login → Dashboard (dengan 4 komponen utama)
+                ├── Control Panel (Simulasi & Kontrol)
+                ├── Slot Management (CRUD Slot)
+                ├── Maintenance Management (Mode Maintenance)
+                └── Notification Center (Alert & Notif)
+```
+
+**Fitur Khusus Admin:**
+- Simulasi events (intrusion, ghost swap, parkir liar)
+- Force complete sesi parkir
+- Set/clear maintenance mode
+- Clear unauthorized parking
+- Real-time monitoring semua slot
+- Statistics dan analytics
+
+---
+
+### Perbandingan Platform
+
+| Fitur | Mobile | Quick Access | Admin |
+|-------|--------|--------------|-------|
+| **Autentikasi** | ✅ Ya (User) | ❌ Tidak | ✅ Ya (Admin) |
+| **Booking Slot** | ✅ Ya | ❌ Tidak | ✅ Ya (via control) |
+| **View Status** | ✅ Ya | ✅ Ya (Read-only) | ✅ Ya (Full control) |
+| **Aktivasi Sesi** | ✅ Ya | ❌ Tidak | ✅ Ya (Force) |
+| **History** | ✅ Ya | ❌ Tidak | ✅ Ya (All users) |
+| **Maintenance** | ❌ Tidak | ✅ View only | ✅ Set/Clear |
+| **Simulasi** | ❌ Tidak | ❌ Tidak | ✅ Ya |
+| **Notifikasi** | ✅ Ya (Personal) | ✅ Ya (Public alerts) | ✅ Ya (System-wide) |
+
+---
+
+## �🚀 Getting Started
 
 ### Prerequisites
 - Node.js (v18+)
