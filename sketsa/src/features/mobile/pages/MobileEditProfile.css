@@ -146,6 +146,177 @@
   margin-top: -0.25rem;
 }
 
+.mobile-edit-profile__input--disabled {
+  background: var(--color-bg-secondary, #f7fafc);
+  color: var(--color-text-tertiary, #a0aec0);
+  cursor: not-allowed;
+  border-color: var(--color-border, #e2e8f0);
+}
+
+.mobile-edit-profile__input--disabled:focus {
+  border-color: var(--color-border, #e2e8f0);
+  box-shadow: none;
+}
+
+.mobile-edit-profile__hint {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary, #718096);
+  margin-top: -0.25rem;
+  font-style: italic;
+}
+
+/* Secondary Vehicles Section */
+.mobile-edit-profile__vehicles-section {
+  margin: 1.5rem 0;
+  padding: 1.25rem;
+  background: var(--color-bg-secondary, #f7fafc);
+  border-radius: 0.75rem;
+  border: 1px solid var(--color-border, #e2e8f0);
+  transition: all 0.3s ease;
+}
+
+.mobile-edit-profile__vehicles-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.mobile-edit-profile__add-vehicle-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.5rem 0.875rem;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.mobile-edit-profile__add-vehicle-btn:hover {
+  background: #2563eb;
+  transform: translateY(-1px);
+}
+
+.mobile-edit-profile__vehicles-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.mobile-edit-profile__vehicle-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: var(--color-bg-primary, white);
+  border: 2px solid var(--color-border, #e2e8f0);
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+}
+
+.mobile-edit-profile__vehicle-card:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.1);
+}
+
+.mobile-edit-profile__vehicle-info {
+  flex: 1;
+}
+
+.mobile-edit-profile__vehicle-plate {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text-primary, #1a202c);
+  margin-bottom: 0.25rem;
+  letter-spacing: 0.5px;
+}
+
+.mobile-edit-profile__vehicle-details {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary, #718096);
+}
+
+.mobile-edit-profile__remove-vehicle-btn {
+  padding: 0.5rem;
+  background: transparent;
+  border: none;
+  color: #f56565;
+  cursor: pointer;
+  border-radius: 0.375rem;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-edit-profile__remove-vehicle-btn:hover {
+  background: rgba(245, 101, 101, 0.1);
+}
+
+.mobile-edit-profile__add-vehicle-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--color-bg-primary, white);
+  border-radius: 0.5rem;
+  border: 2px solid var(--color-border, #e2e8f0);
+}
+
+.mobile-edit-profile__add-vehicle-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.mobile-edit-profile__cancel-vehicle-btn {
+  flex: 1;
+  padding: 0.75rem;
+  background: var(--color-bg-secondary, #f7fafc);
+  border: 2px solid var(--color-border, #e2e8f0);
+  color: var(--color-text-secondary, #718096);
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.mobile-edit-profile__cancel-vehicle-btn:hover {
+  background: var(--color-bg-primary, white);
+  border-color: #cbd5e0;
+}
+
+.mobile-edit-profile__confirm-vehicle-btn {
+  flex: 1;
+  padding: 0.75rem;
+  background: #3b82f6;
+  border: none;
+  color: white;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.mobile-edit-profile__confirm-vehicle-btn:hover {
+  background: #2563eb;
+}
+
+.mobile-edit-profile__empty-vehicles {
+  text-align: center;
+  color: var(--color-text-secondary, #718096);
+  font-size: 0.875rem;
+  padding: 1.5rem;
+  margin: 0;
+}
+
 .mobile-edit-profile__divider {
   height: 1px;
   background: var(--color-border, #e2e8f0);
@@ -197,6 +368,29 @@
   .mobile-edit-profile__actions {
     flex-direction: column-reverse;
   }
+
+  .mobile-edit-profile__vehicles-section {
+    padding: 1rem;
+  }
+
+  .mobile-edit-profile__vehicles-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .mobile-edit-profile__add-vehicle-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .mobile-edit-profile__vehicle-card {
+    padding: 0.875rem;
+  }
+
+  .mobile-edit-profile__vehicle-plate {
+    font-size: 0.95rem;
+  }
 }
 
 @media (max-width: 380px) {
@@ -210,5 +404,9 @@
 
   .mobile-edit-profile__title {
     font-size: 1.1rem;
+  }
+
+  .mobile-edit-profile__add-vehicle-actions {
+    flex-direction: column;
   }
 }

@@ -16,6 +16,12 @@ export function MobileProfile() {
     email: 'john.doe@email.com',
     phone: '081234567890',
     vehicleNumber: 'B 1234 XYZ',
+    vehicleBrand: 'Honda',
+    vehicleModel: 'Civic',
+    secondaryVehicles: [
+      // Contoh kendaraan sekunder
+      // { id: 1, plateNumber: 'B 5678 ABC', brand: 'Toyota', model: 'Avanza' }
+    ],
     memberSince: 'Januari 2026',
     totalBookings: 24,
     activeSession: 1,
@@ -90,7 +96,7 @@ export function MobileProfile() {
             </div>
           </div>
 
-          <div className="mobile-profile__info-item">
+          <div className="mobile-profile__info-item mobile-profile__info-item--primary-vehicle">
             <div className="mobile-profile__info-icon">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
@@ -98,10 +104,43 @@ export function MobileProfile() {
               </svg>
             </div>
             <div className="mobile-profile__info-content">
-              <div className="mobile-profile__info-label">Nomor Kendaraan</div>
-              <div className="mobile-profile__info-value">{user.vehicleNumber}</div>
+              <div className="mobile-profile__info-label">Kendaraan Utama</div>
+              <div className="mobile-profile__primary-vehicle">
+                <div className="mobile-profile__primary-plate">{user.vehicleNumber}</div>
+                <div className="mobile-profile__primary-detail">
+                  {user.vehicleBrand} {user.vehicleModel}
+                </div>
+              </div>
             </div>
           </div>
+
+          {/* Kendaraan Sekunder */}
+          {user.secondaryVehicles && user.secondaryVehicles.length > 0 && (
+            <div className="mobile-profile__info-item mobile-profile__info-item--secondary-vehicles">
+              <div className="mobile-profile__info-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                  <polyline points="14 2 14 8 20 8" />
+                  <line x1="16" y1="13" x2="8" y2="13" />
+                  <line x1="16" y1="17" x2="8" y2="17" />
+                  <polyline points="10 9 9 9 8 9" />
+                </svg>
+              </div>
+              <div className="mobile-profile__info-content">
+                <div className="mobile-profile__info-label">Kendaraan Sekunder ({user.secondaryVehicles.length})</div>
+                <div className="mobile-profile__secondary-list">
+                  {user.secondaryVehicles.map((vehicle) => (
+                    <div key={vehicle.id} className="mobile-profile__secondary-item">
+                      <span className="mobile-profile__secondary-plate">{vehicle.plateNumber}</span>
+                      <span className="mobile-profile__secondary-detail">
+                        {vehicle.brand} {vehicle.model}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
 

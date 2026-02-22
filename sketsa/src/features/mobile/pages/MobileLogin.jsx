@@ -106,17 +106,6 @@ export function MobileLogin() {
           </Button>
         </form>
 
-        <div className="mobile-login__divider">
-          <span>atau</span>
-        </div>
-
-        <div className="mobile-login__social">
-          <button type="button" className="mobile-login__social-btn mobile-login__social-btn--google">
-            <span className="mobile-login__social-icon">G</span>
-            Masuk dengan Google
-          </button>
-        </div>
-
         <div className="mobile-login__footer">
           <p>
             Belum punya akun?{' '}
