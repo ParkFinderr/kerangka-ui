@@ -24,6 +24,54 @@
   flex: 1;
 }
 
+.admin-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.admin-header__user {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.admin-header__user-icon {
+  font-size: 1.25rem;
+}
+
+.admin-header__username {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.admin-header__logout {
+  background: rgba(239, 68, 68, 0.9);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.admin-header__logout:hover {
+  background: rgba(220, 38, 38, 1);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.admin-header__logout:active {
+  transform: translateY(0);
+}
+
 .admin-header__title {
   margin: 0;
   font-size: 2rem;
@@ -63,6 +111,28 @@
 @media (max-width: 768px) {
   .admin-header {
     padding: 1.5rem;
+  }
+
+  .admin-header__content {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .admin-header__actions {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .admin-header__user {
+    flex: 1;
+  }
+
+  .admin-header__logout,
+  .admin-header__back {
+    flex: 1;
+    text-align: center;
   }
 
   .admin-header__title {

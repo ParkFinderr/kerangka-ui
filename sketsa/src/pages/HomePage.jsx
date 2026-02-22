@@ -78,7 +78,7 @@ export function HomePage() {
             <Button
               variant="warning"
               fullWidth
-              onClick={() => navigate('/admin')}
+              onClick={() => navigate('/admin/login')}
             >
               Buka Admin Panel
             </Button>

@@ -5,6 +5,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 import { AdminLayout } from './features/admin/AdminLayout';
 import { AdminDashboard } from './features/admin/pages/AdminDashboard';
+import { AdminLogin } from './features/admin/pages/AdminLogin';
 import { MobileLayout } from './features/mobile/MobileLayout';
 import { MobileEditProfile } from './features/mobile/pages/MobileEditProfile';
 import { MobileHistory } from './features/mobile/pages/MobileHistory';
@@ -94,6 +95,10 @@ export const router = createBrowserRouter([
         element: <QuickAbout />,
       },
     ],
+  },
+  {
+    path: '/admin/login',
+    element: <AdminLogin />,
   },
   {
     path: '/admin',
